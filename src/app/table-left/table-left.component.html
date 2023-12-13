@@ -1,0 +1,16 @@
+<table>
+    <thead>
+       <tr>
+        <th>IATA Code </th>
+        <th>Name </th>
+        <th>Price </th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tdata of tableData ">
+            <td>{{tdata.IATACode}}</td>
+            <td>{{tdata.Name}}</td>
+            <td style="text-align: right;">{{tdata.Price}}</td>
+        </tr>
+    </tbody>
+</table>

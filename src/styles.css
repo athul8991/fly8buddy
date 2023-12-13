@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-color: red;
+    /* background-image: url(https://www.livemint.com/lm-img/img/2023/05/15/1600x900/GO-FIRST-AIRWAYS_1684119787105_1684119787490.JPG); */
+    background-image: url(https://i.ibb.co/SPTFtVP/backgroundimg.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+}

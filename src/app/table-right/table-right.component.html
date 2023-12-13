@@ -1,0 +1,14 @@
+<table>
+    <thead>
+        <tr>
+            <th>IATA Code</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tdata of tableData">
+            <td>{{tdata.IATACode}}</td>
+            <td>{{tdata.City}}</td>
+        </tr>
+    </tbody>
+</table>
