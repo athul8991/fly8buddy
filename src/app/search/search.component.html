@@ -1,25 +1,25 @@
 
             <div class="card p-3" >
-                <form onsubmit="event.preventDefault()" class="form-card">
+                <form #frm ="ngForm" class="form-card" (ngSubmit)="getSearchData(frm.value)">
                    
                     <div class="row justify-content-center form-group "  >
                         <div class="col-12 px-0  " >
                             <div class="custom-control custom-radio custom-control-inline radioinput  " style="height: fit-content;"> 
-                                <input id="customRadioInline1" type="radio" name="customRadioInline1" class="custom-control-input " style="width: 0%; padding: 0px;height: 0px;" checked="true"> 
+                                <input  type="radio" name="oneWay" class="custom-control-input " style="width: 0%; padding: 0px;height: 0px;" checked="true" ngModel> 
                                 <label for="customRadioInline1" class="custom-control-label label-radio">One Way</label> </div>
                             </div>
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-6">
-                            <div class="input-group"> <input type="text" name="Name" placeholder="City or Airport"> <label>FLYING FROM</label> </div>
+                            <div class="input-group"> <input type="text" name="flyFrom" placeholder="City or Airport" ngModel> <label>FLYING FROM</label> </div>
                         </div>
                         <div class="col-6">
-                            <div class="input-group"> <input type="text" name="Name" placeholder="City or Airport"> <label>FLYING TO</label> </div>
+                            <div class="input-group"> <input type="text" name="flyTo" placeholder="City or Airport" ngModel> <label>FLYING TO</label> </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-6">
-                            <div class="input-group "> <input type="date" id="cr_no" name="card-no" placeholder="0000 0000 0000 0000" minlength="19" maxlength="19"> <label>Departing</label> </div>
+                            <div class="input-group "> <input type="date" id="cr_no" name="departingDate" ngModel> <label>Departing</label> </div>
                         </div>
                     </div>
                     <div class="row justify-content-center">
@@ -27,19 +27,19 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="input-group"> 
-                                        <input type="number" id="exp" name="expdate"> 
+                                        <input type="number" id="exp"  name="adultsNum" ngModel> 
                                         <label>ADULTS(18+)</label> 
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    <div class="input-group"> <input  type="number" name="cvv" > 
+                                    <div class="input-group"> <input  type="number" name="childNum" ngModel > 
                                         <label>CHILD(0-17)</label> </div>
                                 </div>
                                 <div class="col-4">
                                     
                                     <div class="input-group">
                                         
-                                        <select class="form-control input-style" >
+                                        <select class="form-control input-style" name="travelClass" ngModel>
                                             <option value="Economy">Economy</option>
                                             <option value="Premium Economy">Premium Economy</option>
                                             <option value="Business">Business</option>

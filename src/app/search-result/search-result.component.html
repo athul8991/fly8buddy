@@ -1,0 +1,21 @@
+<div *ngIf="array.length>0;then showData else noData"></div>
+
+<main role="main" class="inner cover text-left">
+
+  <ng-template #noData>
+    <h2 class="cover-heading">No Flights Available</h2>
+    <p class="lead">
+      <a [routerLink]="'/search'" class="btn btn-lg btn-outline-dark">Search once again</a>
+    </p>
+  </ng-template>
+  <ng-template #showData>
+    <h2 class="cover-heading">showdata</h2>
+    <p class="lead">
+      <a [routerLink]="'/search'" class="btn btn-lg btn-outline-dark">Search once again</a>
+    </p>
+
+  </ng-template>
+  </main>
+
+  
+

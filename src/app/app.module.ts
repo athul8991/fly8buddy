@@ -7,6 +7,8 @@ import { TableLeftComponent } from './table-left/table-left.component';
 import { TableRightComponent } from './table-right/table-right.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { SearchComponent } from './search/search.component';
     TableLeftComponent,
     TableRightComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
