@@ -10,11 +10,17 @@ export class SearchResultComponent implements OnInit {
 
   constructor(private dataService:DataService){}
   objArray:any[]=[];
+  date!:string;
 
   ngOnInit(): void {
+    
+    
 
     this.dataService.dataEmiter.subscribe((result)=>{
+      console.log(result);
+      
       this.objArray = result.data;
+      this.date=result.date
     })
     
   }

@@ -1,0 +1,23 @@
+ul{
+    list-style-type:none;
+}
+.listContainer{
+    background-color: skyblue;
+}
+
+li{
+    margin: 5px;
+    padding: 5px;
+    line-height:1 ;
+}
+span{
+    color: red;
+    margin: 0px 5px 0px 5px;
+    font-size: large;
+}
+.bookbtn{
+    border: none;
+    background: none;
+    color: rgb(57, 57, 205);
+    font-weight: bold;
+}
