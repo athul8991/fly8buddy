@@ -1,8 +1,8 @@
-<div *ngIf="array.length>0;then showData else noData"></div>
+<!-- <div *ngIf="array.length>0;then showData else noData"></div> -->
 
 <main role="main" class="inner cover text-left">
 
-  <ng-template #noData>
+  <!-- <ng-template #noData>
     <h2 class="cover-heading">No Flights Available</h2>
     <p class="lead">
       <a [routerLink]="'/search'" class="btn btn-lg btn-outline-dark">Search once again</a>
@@ -11,10 +11,22 @@
   <ng-template #showData>
     <h2 class="cover-heading">showdata</h2>
     <p class="lead">
-      <a [routerLink]="'/search'" class="btn btn-lg btn-outline-dark">Search once again</a>
+      <a [routerLink]="'/search'" class="btn btn-lg btn-outline-dark">Search once again</a> 
     </p>
 
-  </ng-template>
+  </ng-template> -->
+<!-- 
+  <h1 *ngIf="array.length>0">data</h1>
+  <h1 *ngIf="array.length<0">Nodata</h1> -->
+  <!-- <h1>hello</h1>
+  <div *ngFor="let item of objArray">
+    <h1>nvjnjfnvj</h1>
+    <h1>{{item}}</h1>
+  </div>-->
+  <h1>hello</h1>
+  <div *ngFor="let item of objArray">
+    <h1 class="text-success">{{item.flightName}}</h1>
+  </div>
   </main>
 
   
