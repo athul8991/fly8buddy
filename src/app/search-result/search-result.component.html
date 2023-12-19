@@ -2,30 +2,16 @@
 
 <main role="main" class="inner cover text-left">
 
-  <!-- <ng-template #noData>
+  <div>
+    <div *ngFor="let item of objArray">
+      <h1 class="text-success">{{item.flightName}}</h1>
+    </div>
+  </div>
+  <div #noData>
     <h2 class="cover-heading">No Flights Available</h2>
     <p class="lead">
       <a [routerLink]="'/search'" class="btn btn-lg btn-outline-dark">Search once again</a>
     </p>
-  </ng-template>
-  <ng-template #showData>
-    <h2 class="cover-heading">showdata</h2>
-    <p class="lead">
-      <a [routerLink]="'/search'" class="btn btn-lg btn-outline-dark">Search once again</a> 
-    </p>
-
-  </ng-template> -->
-<!-- 
-  <h1 *ngIf="array.length>0">data</h1>
-  <h1 *ngIf="array.length<0">Nodata</h1> -->
-  <!-- <h1>hello</h1>
-  <div *ngFor="let item of objArray">
-    <h1>nvjnjfnvj</h1>
-    <h1>{{item}}</h1>
-  </div>-->
-  <h1>hello</h1>
-  <div *ngFor="let item of objArray">
-    <h1 class="text-success">{{item.flightName}}</h1>
   </div>
   </main>
 

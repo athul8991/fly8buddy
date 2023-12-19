@@ -8,15 +8,28 @@ import {catchError} from 'rxjs'
 })
 export class DataService {
   
-  dataEmiter:EventEmitter<any>= new EventEmitter<any>()
+  dataEmiter:EventEmitter<any>= new EventEmitter<any>();
+  
+  url = 'http://127.0.01:3000';
 
   constructor(private http : HttpClient ) { }
 
-  addData(data:any){
-    this.dataEmiter.emit(data);
-  }
-  
-  showData(){
-    
+  fetchData(frmData:any){
+
+    this.http.post(this.url,frmData).subscribe({
+
+      next:(data)=>{
+
+        this.dataEmiter.emit(data);
+
+      },
+      error:(err)=>{
+
+        console.log(err);
+        
+
+      }
+    })
+
   }
 }
