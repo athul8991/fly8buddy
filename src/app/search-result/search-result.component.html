@@ -9,7 +9,10 @@
     <div class="listContainer mt-5" >
       <ul  *ngFor="let item of objArray">
         <li class=""  >
-         Airline <span>{{item.flightName }}</span> Date of Journey <span>{{date}}</span> Base Price <span>{{item.price}}</span><button class="bookbtn">Book Ticket</button>
+         Airline <span>{{item.flightName }}</span> 
+         Date of Journey <span>{{date}}</span> 
+         Base Price <span>{{item.price}}</span>
+         <button class="bookbtn" (click)="boockTicket(date,item)">Book Ticket</button>
         </li>
       </ul>
      

@@ -24,4 +24,9 @@ export class SearchResultComponent implements OnInit {
     })
     
   }
+
+  boockTicket(dt:string,item:any){
+    console.log(dt,item);
+    
+  }
 }
