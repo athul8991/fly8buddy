@@ -7,12 +7,13 @@
     <h2 class="text-center mt-2">Searched Flight Details</h2>
     
     <div class="listContainer mt-5" >
-      <ul  *ngFor="let item of objArray">
+      <ul  *ngFor="let item of objArray;let in ='index'">
         <li class=""  >
          Airline <span>{{item.flightName }}</span> 
          Date of Journey <span>{{date}}</span> 
          Base Price <span>{{item.price}}</span>
          <button class="bookbtn" (click)="boockTicket(item,formData)">Book Ticket</button>
+         <!-- <a [routerLink]="'/fillForm'" class="bookbtn">Book Ticket</a> -->
         </li>
       </ul>
      
