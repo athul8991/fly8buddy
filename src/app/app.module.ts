@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { FillFormComponent } from './fill-form/fill-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SearchResultComponent } from './search-result/search-result.component';
     TableRightComponent,
     HomeComponent,
     SearchComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    FillFormComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ export class SearchResultComponent implements OnInit {
   constructor(private dataService:DataService){}
   objArray:any[]=[];
   date!:string;
+  formData!:any;
 
   ngOnInit(): void {
     
@@ -18,15 +19,16 @@ export class SearchResultComponent implements OnInit {
 
     this.dataService.dataEmiter.subscribe((result)=>{
       console.log(result);
-      
+      this.formData=result.frmData;
       this.objArray = result.data;
-      this.date=result.date
+      this.date=this.formData.departingDate;
+      
     })
     
   }
 
-  boockTicket(dt:string,item:any){
-    console.log(dt,item);
+  boockTicket(item:any,frmData:any){
+    console.log(item,frmData);
     
   }
 }
