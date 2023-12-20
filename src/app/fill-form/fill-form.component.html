@@ -4,14 +4,14 @@
         <div *ngFor="let person of adArray">
         <div class="row mb-3">
             <div class="col-12 col-md-12">
-                <div class="input-group"> <input type="text" [name]="person.name" placeholder="City or Airport" ngModel> <label>{{person.title}}</label> </div>
+                <div class="input-group"> <input type="text" [name]="person.name" placeholder="Person Name" ngModel> <label>{{person.title}}</label> </div>
             </div>
         </div>
         </div>
         <div *ngFor="let child of chArray">
         <div class="row mb-3">
             <div class="col-12 col-md-12">
-                <div class="input-group"> <input type="text" [name]="child.name" placeholder="City or Airport" ngModel> <label>{{child.title}}</label> </div>
+                <div class="input-group"> <input type="text" [name]="child.name" placeholder="Child Name" ngModel> <label>{{child.title}}</label> </div>
             </div>
         </div>
         </div>

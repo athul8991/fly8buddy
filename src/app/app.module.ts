@@ -12,6 +12,8 @@ import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { FillFormComponent } from './fill-form/fill-form.component';
+import { TicketComponent } from './ticket/ticket.component';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FillFormComponent } from './fill-form/fill-form.component';
     HomeComponent,
     SearchComponent,
     SearchResultComponent,
-    FillFormComponent
+    FillFormComponent,
+    TicketComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,

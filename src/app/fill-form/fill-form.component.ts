@@ -2,6 +2,7 @@ import { Component,OnInit,} from '@angular/core';
 import { InputGenerator } from '../inputGenerator';
 import { DataService } from '../data.service';
 import { NgForm } from '@angular/forms';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-fill-form',
@@ -15,7 +16,7 @@ export class FillFormComponent implements OnInit {
   chArray:any[]=[];
     id!:number;
     frmData:any ={}
-  constructor(private dataService:DataService){
+  constructor(private dataService:DataService,private router:Router){
     
   }
   ngOnInit(): void { 
@@ -37,6 +38,8 @@ export class FillFormComponent implements OnInit {
 
   sbmtData(data:FormData){
     console.log(data);
+    this.router.navigate(["/success"])
+
     
   }
   resetForm(form:NgForm){
