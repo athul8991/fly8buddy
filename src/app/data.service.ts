@@ -12,7 +12,8 @@ export class DataService {
   dataEmiter:EventEmitter<any>= new EventEmitter<any>();
   formDataEmiter:EventEmitter<any> = new EventEmitter<any>();
 
-  frmData:any;
+  private frmData:any;
+  private allData:any;
 
   url = 'http://127.0.01:3000';
   constructor(private http : HttpClient ) { }
@@ -32,6 +33,13 @@ export class DataService {
   dataGet(inpData:any){
     this.frmData = inpData;
 
+  }
+
+  ticketPageData(data:any){
+    this.allData = data
+  }
+  getTicketData(){
+    return this.allData;
   }
 
 dataEmit(){

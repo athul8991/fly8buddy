@@ -22,6 +22,7 @@ export class SearchResultComponent implements OnInit {
       this.formData=result.frmData;
       this.objArray = result.data;
       this.date=this.formData.departingDate;
+      console.log(this.objArray[0].totals.base)
     });
     
   }
