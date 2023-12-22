@@ -1,0 +1,8 @@
+tr:nth-child(4){
+    border-bottom:1px dashed rgb(0, 0, 0);
+}
+td{
+    margin-left: 5px;
+    padding-left:2px;
+
+}

@@ -12,16 +12,26 @@ export class DataService {
   dataEmiter:EventEmitter<any>= new EventEmitter<any>();
   formDataEmiter:EventEmitter<any> = new EventEmitter<any>();
 
-  private frmData:any;
-  private allData:any;
+  private flightDetails:any;
+  private flightsData:any;
+  private form1Data:any;
+  private form2Data:any;
 
   url = 'http://127.0.01:3000';
   constructor(private http : HttpClient ) { }
 
+
   fetchData(frmData:any){
+    console.log(frmData);
+    
+
+    this.form1Data = frmData;
+    console.log(this.form1Data);
+    
     this.http.post(this.url,frmData).subscribe({
       next:(data)=>{
-       const obj = {frmData:frmData,...data}        
+        this.flightsData = data
+        const obj= {frmData:this.form1Data,...this.flightsData}     
         this.dataEmiter.emit(obj);
       },
       error:(err)=>{
@@ -30,19 +40,28 @@ export class DataService {
     })
   }
 
-  dataGet(inpData:any){
-    this.frmData = inpData;
+  selctedFlight(inpData:any){
+    this.flightDetails = inpData;
 
   }
 
-  ticketPageData(data:any){
-    this.allData = data
+  submitForm2Data(data:any){
+    this.form2Data = data;
+
   }
   getTicketData(){
-    return this.allData;
+    let allData ={bookedDate:'2023-23',travelClass:'',flightDetails:[],passengerDetails:{}};
+    allData.bookedDate = this.form1Data.dateNow;
+    allData.travelClass = this.form1Data.travelClass;
+    allData.flightDetails = this.flightDetails;
+    allData.passengerDetails = this.form2Data;
+    return allData;
+
   }
 
+  
+
 dataEmit(){
-return this.frmData
+return this.form1Data;
 }
 }

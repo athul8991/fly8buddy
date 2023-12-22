@@ -14,23 +14,25 @@ export class SearchResultComponent implements OnInit {
   objArray:any[]=[];
   date!:string;
   formData!:any;
-
+  adnum!:number;
+  chlidNum!:number;
   ngOnInit(): void {
     
     this.dataService.dataEmiter.subscribe((result)=>{
-      // console.log(result);
+
       this.formData=result.frmData;
+      
       this.objArray = result.data;
+
       this.date=this.formData.departingDate;
-      console.log(this.objArray[0].totals.base)
     });
     
   }
 
-  boockTicket(item:any,frmData:any){
-    const data = {selectFlight:item,frmData:frmData}
+  boockTicket(item:any){
+    const data = {selectFlight:item}
     
-    this.dataService.dataGet(data)
+    this.dataService.selctedFlight(data)
 
     this.route.navigate(['/fillForm']);
   }
