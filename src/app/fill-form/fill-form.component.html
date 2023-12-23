@@ -4,14 +4,18 @@
         <div *ngFor="let person of adArray">
         <div class="row mb-3">
             <div class="col-12 col-md-12">
-                <div class="input-group"> <input type="text" [name]="person.name" placeholder="Person Name" ngModel> <label>{{person.title}}</label> </div>
+                <div class="input-group"> <input required #person.name type="text" [name]="person.name" placeholder="Person Name" ngModel> <label>{{person.title}}</label> </div>
+            </div>
+            <div *ngIf="person.name.touched && person.name.invalid" class="alert alert-danger">
+                <p *ngIf="person.name.errors && person.name.errors['required']">Enter the {{person.title}}</p>
+                
             </div>
         </div>
         </div>
         <div *ngFor="let child of chArray">
         <div class="row mb-3">
             <div class="col-12 col-md-12">
-                <div class="input-group"> <input type="text" [name]="child.name" placeholder="Child Name" ngModel> <label>{{child.title}}</label> </div>
+                <div class="input-group"> <input required #cname type="text" [name]="child.name" placeholder="Child Name" ngModel> <label>{{child.title}}</label> </div>
             </div>
         </div>
         </div>

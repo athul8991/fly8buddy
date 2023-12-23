@@ -1,6 +1,6 @@
 
             <div class="card p-3" >
-                <form #frm ="ngForm" class="form-card" (ngSubmit)="getSearchData(frm.value)">
+                <form  #frm ="ngForm" class="form-card" (ngSubmit)="getSearchData(frm.value)">
                    
                     <div class="row justify-content-center form-group "  >
                         <div class="col-12 px-0  " >
@@ -11,15 +11,27 @@
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-6">
-                            <div class="input-group"> <input type="text" name="flyFrom" placeholder="City or Airport" ngModel> <label>FLYING FROM</label> </div>
+                            <div class="input-group"> <input #from="ngModel" required type="text" name="flyFrom" placeholder="City or Airport" ngModel> <label>FLYING FROM</label> </div>
+                            <div *ngIf="from.touched && from.invalid" class="alert alert-danger">
+                                <p *ngIf="from.errors && from.errors['required']">Enter the departing place</p>
+                                
+                            </div>
                         </div>
                         <div class="col-6">
-                            <div class="input-group"> <input type="text" name="flyTo" placeholder="City or Airport" ngModel> <label>FLYING TO</label> </div>
+                            <div class="input-group"> <input #to="ngModel" required type="text" name="flyTo" placeholder="City or Airport" ngModel> <label>FLYING TO</label> </div>
+                            <div *ngIf="to.touched && to.invalid" class="alert alert-danger">
+                                <p *ngIf="to.errors && to.errors['required']">Enter The Arrival Place</p>
+                                
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-6">
-                            <div class="input-group "> <input type="date" id="cr_no" name="departingDate" ngModel> <label>Departing</label> </div>
+                            <div class="input-group "> <input #date="ngModel" required=""  type="date" id="cr_no" name="departingDate" ngModel> <label>Departing</label> </div>
+                            <div *ngIf="date.touched && date.invalid" class="alert alert-danger">
+                                <p *ngIf="date.errors && date.errors['required']">Enter the Traveling Date</p>
+                                
+                            </div>
                         </div>
                     </div>
                     <div class="row justify-content-center">
@@ -27,7 +39,7 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="input-group"> 
-                                        <input type="number" id="exp"  name="adultsNum" ngModel> 
+                                        <input  type="number" id="exp"  name="adultsNum" ngModel> 
                                         <label>ADULTS(18+)</label> 
                                     </div>
                                 </div>
@@ -39,18 +51,23 @@
                                     
                                     <div class="input-group">
                                         
-                                        <select class="form-control input-style" name="travelClass" ngModel>
+                                        <select #class="ngModel" required class="form-control input-style" name="travelClass" ngModel>
                                             <option value="ECONOMY">Economy</option>
                                             <option value="PREMIUM_ECONOMY">Premium Economy</option>
                                             <option value="BUSSINESS">Business</option>
                                             <option value="FIRST">First Class</option>
                                         </select>
                                         <label> TRAVEL CLASS</label>
-                                      </div>
+                                    </div>
+                                    <div *ngIf="class.touched && class.invalid" class="alert alert-danger">
+                                        <p *ngIf="class.errors && class.errors['required']">Enter the Traveling Class</p>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="row justify-content-center text-center">
                         <div class="col-md-12"> <button class="btn btn-primary showBtn">SHOW FLIGHTS</button></div>
                     </div>
