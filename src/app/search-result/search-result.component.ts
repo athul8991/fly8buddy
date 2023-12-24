@@ -16,6 +16,7 @@ export class SearchResultComponent implements OnInit {
   formData!:any;
   adnum!:number;
   chlidNum!:number;
+  isLoading:boolean =true;
   ngOnInit(): void {
     
     this.dataService.dataEmiter.subscribe((result)=>{
@@ -23,7 +24,9 @@ export class SearchResultComponent implements OnInit {
       this.formData=result.frmData;
       
       this.objArray = result.data;
-
+      if(result){
+        this.isLoading =false
+      }
       this.date=this.formData.departingDate;
     });
     

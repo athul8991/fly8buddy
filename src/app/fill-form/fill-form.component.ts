@@ -35,11 +35,6 @@ export class FillFormComponent implements OnInit {
   }
 
   sbmtData(data:FormData){
-  // this.ticketData.frm1Data = this.frmData.frmData;
-  // this.ticketData.selFlight = this.frmData.selectFlight
-  // this.ticketData.frm2Data = data;
-  // this.ticketData.chArray = this.chArray;
-  // this.ticketData.adArray = this.adArray;
   this.dataService.submitForm2Data(data);
   this.router.navigate(["/success"])
 

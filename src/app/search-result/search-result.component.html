@@ -1,6 +1,9 @@
 
 
 <main role="main" class="inner cover text-left">
+
+  <div *ngIf="!isLoading">
+
   <div *ngIf="objArray.length>0 then showData else noData"></div>
 
   <ng-template #showData >
@@ -29,9 +32,16 @@
     </div>
 
   </ng-template>
+  
   <p class="lead ml-5">
     <a [routerLink]="'/search'" class="btn btn-lg btn-outline-dark">Search once again</a>
   </p>
+  </div>
+
+  <div *ngIf="isLoading">
+    <img src="assets/img/hzk6C.gif" alt="Loading..." width="200px" height="100px">
+  </div>
+
    
   
   </main>
